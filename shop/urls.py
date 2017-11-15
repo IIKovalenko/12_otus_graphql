@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^graphql', GraphQLView.as_view(graphiql=True, schema=schema)),
 
+    url(r'^submit_order/', products_views.SubmitOrderView.as_view()),
     url(r'^products/$', products_views.ProductsListView.as_view()),
     url(
         r'^products/(?P<pk>[0-9]+)/$',

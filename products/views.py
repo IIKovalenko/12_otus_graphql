@@ -16,7 +16,12 @@ class ProductsDetailView(DetailView):
     model = models.Product
 
 
-class FormSubmitView(View):
+class SubmitOrderView(View):
     def post(self, request, *args, **kwargs):
         print(request.body)
-        return JsonResponse({'status': 'ok'})
+        # TODO: save order
+        return JsonResponse(
+            {'status': 'ok',
+            'text': 'Ваш заказ оформлен и мы вам напишем в течении трёх часов.'
+            }
+        )

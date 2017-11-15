@@ -1,0 +1,8 @@
+Django==1.11.6
+django-extensions==1.9.6
+django-filter==1.1.0
+graphene==2.0
+graphene-django==2.0.0
+ipython==5.5.0
+Pillow==4.3.0
+Werkzeug==0.12.2
