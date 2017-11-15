@@ -1,0 +1,17 @@
+{% extends 'products/base.html' %}
+
+
+{% load static %}
+
+
+{% block page_content %}
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{{ object.image.url }}" width="100%" />
+        </div>
+        <div class="col-md-8 well">
+          <h2>{{ object.title }}</h2>
+          {{ object.description }}
+        </div>
+      </div>
+{% endblock %}
