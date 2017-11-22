@@ -4,10 +4,17 @@
 {% load static %}
 
 
+{% block menu_items %}
+  {% for product in object.similar_product.all %}
+    <li><a href="{% url 'product_detail' product.pk %}">{{ product.title }}</a></li>
+  {% endfor %}
+{% endblock %}
+
+
 {% block page_content %}
   <div class="row">
     <div class="col-md-4">
-      <img src="{{ object.image.url }}" width="100%"/>
+      <img src="{{ object.image.url }}" width="100%" height="250px" />
     </div>
     <div class="col-md-8">
       <h2>{{ object.title }}</h2>
@@ -31,6 +38,20 @@
           <h4>Заказ успешно оформлен</h4>
           <div class="js_user_text"></div>
       </div>
+    </div>
+  </div>  
+
+    <div class="row similar_wrapper">
+      <h4>Вместе с этим часто покупают</h4>
+        {% for product in object.similar_product.all %}
+          <div class="col-md-3 card">
+            <img src="{{ product.image.url }}" width="100%"/>
+            <a href="{% url 'product_detail' product.pk %}">
+              <div class="title">{{ product.title }}</div>
+            </a>
+            <div>{{ product.description }}</div>
+          </div>
+        {% endfor %}
     </div>
 {% endblock %}
 
