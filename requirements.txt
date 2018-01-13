@@ -6,3 +6,5 @@ graphene-django==2.0.0
 ipython==5.5.0
 Pillow==4.3.0
 Werkzeug==0.12.2
+django-debug-toolbar==1.9.1
+
